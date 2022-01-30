@@ -1,0 +1,47 @@
+\documentclass[12pt,twoside]{article}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz,graphicx,amsmath,amsfonts,amscd,amssymb,bm,cite,epsfig,epsf,url}
+\usepackage[hang,flushmargin]{footmisc}
+\usepackage[colorlinks=true,urlcolor=blue,citecolor=blue]{hyperref}
+\usepackage{amsthm,multirow,wasysym,appendix}
+\usepackage{array,subcaption} 
+% \usepackage[small,bf]{caption}
+\usepackage{bbm}
+\usepackage{pgfplots}
+\usetikzlibrary{spy}
+\usepgfplotslibrary{external}
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{arrows,automata}
+\usepackage{thmtools}
+\usepackage{blkarray} 
+\usepackage{textcomp}
+\usepackage[left=0.8in,right=1.0in,top=1.0in,bottom=1.0in]{geometry}
+
+\input{macros}
+
+\begin{document}
+
+\begin{center}
+{\large{\textbf{Homework 1}} } \vspace{0.2cm}\\
+Due February 6 at 11 pm
+\\
+\end{center}
+\input{hwstatement.tex}\\
+
+\begin{enumerate}
+
+\item (Logistic function) Let $\rnd{d}$ be a Bernoulli random variable with parameter $\theta$ and let $\rnd{c}$ be a continuous random variable defined on the same probability space. The conditional distributions of $\rnd{c}$ given $\rnd{d}=0$ and $\rnd{d}=1$ are both Gaussian with mean parameters $\mu_0$ and $\mu_1$ respectively, and the same standard-deviation parameter $\sigma$. Show that the conditional pmf of $\rnd{d}$ given $\rnd{c}$ equals 
+\begin{align}
+p_{\rnd{d} \cnd \rnd{c}}(1 \cnd c) &  = \frac{1}{1 + \alpha \exp( - \beta c) },
+\end{align} 
+which is a logistic function of $c$, and derive the values of $\alpha$ and $\beta$ as a function of $\theta$, $\mu_0$, $\mu_1$ and $\sigma$. Plot $p_{\rnd{d} \cnd \rnd{c}}(1 \cnd c) $ as a function of $c$ for $\theta:=0.5$, $\mu_0=-1$, $\mu_1=1$ and $\sigma=1$.
+
+\item (Classification based on variance) Let $\rnd{d}$ be a Bernoulli random variable with parameter $\theta$ and let $\rnd{c}$ be a continuous random variable defined on the same probability space. The conditional distributions of $\rnd{c}$ given $\rnd{d}=0$ and $\rnd{d}=1$ are both Gaussian with zero mean and standard-deviation parameters $\sigma_0$ and $\sigma_1$ respectively. Derive the conditional pmf of $\rnd{d}$ given $\rnd{c}$. Plot $p_{\rnd{d} \cnd \rnd{c}}(1 \cnd c) $ as a function of $c$ for $\theta:=0.5$, $\sigma_0:=1$, and $\sigma_1:=0.5$.
+
+\item (K-means and Gaussian mixture models) In $k$-means clustering a mean vector is defined to represent the center of each of the $k$ clusters. Then two steps are repeated until convergence: (1) Each data point is assigned to the cluster whose mean is closest to it in $\ell_2$ norm. (2) The mean vector of each cluster is computed by averaging the points assigned to it. This method, called Lloyd's algorithm, is similar to expectation maximization applied to a Gaussian mixture model. What are the main differences?  
+
+\item (Clustering according to height) Fit a Gaussian mixture model with two clusters to the height data. Complete the notebook.
+
+ \end{enumerate}
+ 
+\end{document}
